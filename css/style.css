@@ -1,3 +1,110 @@
+:root {
+    --darkb: 0 61 138;
+    --blue: 3 114 197;
+    --brown: 94 60 38;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(var(--blue));
+    color: rgb(var(--darkb));
+    counter-reset: section;
+}
+
+
+header {
+    height: 400px;
+    background: url("../images/banner.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
-    
+    font-family: "Rubik Distressed", cursive;
+    font-weight: normal;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+main {
+    background: white;
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: 6px 6px 6px -2px rgb(var(--darkb));
+}
+
+h2 {
+    font-family: "Rubik Distressed", cursive;
+    font-weight: normal;
+    font-variant: small-caps;
+    color: rgb(var(--blue));
+}
+
+h2:not(:first-of-type):not(:last-of-type) {
+    counter-increment: section;
+}
+
+h2:not(:first-of-type):not(:last-of-type)::before {
+    content: counter(section) ". ";
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.categories button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background-color: rgba(var(--darkb), 0.1);
+    color: rgb(var(--darkb));
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categories button:first-child {
+    background-color: rgb(var(--darkb));
+    color: white;
+}
+
+
+/* Tablet bullshit */
+@media (min-width: 750px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    main {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .categories {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+}
+
+/* Desktop bullshit */
+@media (min-width: 1200px) {
+
+    .categories {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
 }
