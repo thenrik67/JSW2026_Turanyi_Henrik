@@ -13,7 +13,6 @@ body {
     counter-reset: section;
 }
 
-
 header {
     height: 400px;
     background: url("../images/banner.png");
@@ -31,7 +30,6 @@ h1 {
     font-size: 2rem;
     text-align: center;
 }
-
 
 main {
     background: white;
@@ -78,8 +76,89 @@ h2:not(:first-of-type):not(:last-of-type)::before {
     color: white;
 }
 
+.categories button.is-active {
+    background-color: rgb(var(--darkb));
+    color: white;
+}
 
-/* Tablet bullshit */
+.cards {
+    margin: 1rem 0;
+}
+
+.card {
+    border: 1px solid rgb(var(--blue));
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 0.5rem;
+}
+
+.card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.calc-form {
+    margin: 1rem 0;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid rgb(var(--darkb));
+    border-radius: 0;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgb(var(--darkb));
+    color: white;
+}
+
+.error {
+    color: rgb(var(--brown));
+    font-size: 0.85rem;
+}
+
+footer {
+    background: rgb(var(--darkb));
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.modal-bd {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    padding: 1rem;
+    border: 2px solid rgb(var(--darkb));
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
 @media (min-width: 750px) {
     h1 {
         font-size: 3rem;
@@ -96,15 +175,11 @@ h2:not(:first-of-type):not(:last-of-type)::before {
         flex-wrap: wrap;
         gap: 1.5rem;
     }
-
 }
 
-/* Desktop bullshit */
 @media (min-width: 1200px) {
-
     .categories {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
-
 }
