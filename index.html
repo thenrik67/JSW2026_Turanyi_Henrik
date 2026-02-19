@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,95 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <script defer src="js/script.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Csomag térkitöltő anyagok</h1>
     </header>
 
     <main>
-        <h2>Térkitöltő anyagok csoportosítása</h2>
+        <section class="intro">
+            <p>
+                A csomagolás során a térkitöltő anyag kiválasztása nemcsak a termék biztonsága,
+                hanem a költséghatékonyság és a fenntarthatóság szempontjából is kulcsfontosságú.
+            </p>
 
-        <div class="categories">
-            <button>Összes kategória</button>
-            <button>Műanyag alapú térkitöltők</button>
-            <button>Papír alapú térkitöltők</button>
-            <button>Fenntartható és bio megoldások</button>
-        </div>
+            <h2>Térkitöltő anyagok csoportosítása</h2>
 
-        <h2>Műanyag alapú térkitöltők</h2>
-        <p>Bár a környezetvédelmi szempontok miatt visszaszorulóban vannak, hatékonyságuk és könnyű súlyuk miatt még mindig népszerűek.</p>
-        <h2></h2>
+            <nav class="categories" aria-label="Kategóriák">
+                <button class="cat-btn is-active" data-filter="all">Összes kategória</button>
+                <button class="cat-btn" data-filter="plastic">Műanyag alapú térkitöltők</button>
+                <button class="cat-btn" data-filter="paper">Papír alapú térkitöltők</button>
+                <button class="cat-btn" data-filter="bio">Fenntartható és bio megoldások</button>
+            </nav>
+        </section>
+
+        <section class="category-block" data-category="plastic">
+            <h2>Műanyag alapú térkitöltők</h2>
+            <p>
+                Bár a környezetvédelmi szempontok miatt visszaszorulóban vannak, hatékonyságuk és könnyű súlyuk miatt
+                még mindig népszerűek.
+            </p>
+
+            
+        </section>
+
+        <section class="category-block" data-category="paper">
+            <h2>Papír alapú térkitöltők</h2>
+            <p> A legnépszerűbb környezetbarát alternatívák, mivel könnyen újrahasznosíthatóak és professzionális megjelenést kölcsönöznek.</p>
+
+            
+        </section>
+
+        <section class="category-block" data-category="bio">
+            <h2>Fenntartható és bio megoldások</h2>
+            <p>A modern logisztikai irányvonal, ahol az anyagok természetes úton lebomlanak vagy komposztálhatóak.</p>
+
+            
+        </section>
+
+        <section class="calculator">
+            <h2>Maximum mennyi térkitöltőre lenne szükségem?</h2>
+
+            <form id="calc-form" class="calc-form" novalidate>
+                <div class="field">
+                    <label for="length">Hosszúság (cm):</label>
+                    <input id="length" name="length" type="number" inputmode="numeric" min="1" step="1" required
+                        aria-describedby="length-error" />
+                    <p class="error" id="length-error" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                    <label for="width">Szélesség (cm):</label>
+                    <input id="width" name="width" type="number" inputmode="numeric" min="1" step="1" required
+                        aria-describedby="width-error" />
+                    <p class="error" id="width-error" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                    <label for="height">Magasság (cm):</label>
+                    <input id="height" name="height" type="number" inputmode="numeric" min="1" step="1" required
+                        aria-describedby="height-error" />
+                    <p class="error" id="height-error" aria-live="polite"></p>
+                </div>
+
+                <button class="btn-primary" type="submit">Számolás</button>
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>Készítette: Turányi Henrik</p>
+    </footer>
+    <div class="model-bd" id="result-modal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button type="button" class="btn-primary modal-close" id="modal-close" aria-label="Bezárás">×</button>
+            <h3 id="modal-title">Eredmény</h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
 </body>
 </html>
